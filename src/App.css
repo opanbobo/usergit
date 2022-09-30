@@ -115,7 +115,7 @@ img {
   border: #ccc 1px dotted;
   border-radius: 10px;
   margin: 0.7rem 0;
-  height: 200px;
+  height: 100%;
 }
 
 .repoCard {
@@ -210,6 +210,10 @@ img {
   margin: 3rem 0;
 }
 
+.w-50{
+ 
+}
+
 /* Grid */
 .grid-2 {
   display: grid;
@@ -268,6 +272,10 @@ img {
   background: var(--light-color);
   color: #333;
   border-radius: 5px;
+}
+
+.d-none{
+  display: none;
 }
 
 .alert {
@@ -341,14 +349,41 @@ img {
 }
 
 /* Forms */
+.form{
+  position: relative;
+}
+
+.rounded{
+  border-radius: 20px;
+}
+
 input {
   margin: 1.2rem 0;
+}
+
+.btn-green{
+  color: #fff;
+  background: linear-gradient(180deg, rgba(52, 183, 89, 0.15) 0%, rgba(46, 164, 79, 0) 100%),#2ea44f !important;
 }
 
 .form-text {
   display: block;
   margin-top: 0.3rem;
   color: #888;
+}
+
+.btn-search{
+  background-color: transparent;
+  cursor: pointer;
+  width: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.btn-clear{
+  border-radius: 20px;
+  width: 100px;
 }
 
 input[type='text'],
@@ -381,9 +416,8 @@ table th {
 
 /* Navbar */
 .navbar {
-  display: flex;
-  /* justify-content: space-between; */
-  align-items: center;
+  display: block;
+  text-align: center;
   padding: 0.7rem 2rem;
   z-index: 1;
   width: 100%;
@@ -401,7 +435,7 @@ nav h1 {
 }
 
 .navbar a {
-  color: #fff;
+  color: #333;
   padding: 0.45rem;
   margin: 0 0.25rem;
 }

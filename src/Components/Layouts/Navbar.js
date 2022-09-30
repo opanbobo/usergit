@@ -4,21 +4,17 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({ title, icon }) => {
     return (
-        <nav className='navbar bg-dark'>
+        <nav className='navbar'>
             <i className={icon}></i>
             <h1>
-                {title}
+            <Link to='/'>{title}</Link>
             </h1>
-            <ul>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/about'>About</Link></li>
-            </ul>
         </nav>
     );
 }
 
 Navbar.defaultProps = {
-    title: 'Tech Test',
+    title: 'Tech Test Tofan',
     icon: 'fab fa-github-square fa-4x'
 }
 

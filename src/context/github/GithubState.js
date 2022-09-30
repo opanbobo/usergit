@@ -50,7 +50,7 @@ const GithubState = props => {
         setLoading();
 
         const res = await axios.get(`https://api.github.com/search/users?q=${text}&client_id=${gitHubClientId}&client_secret=${gitHubClientSecret}`);
-        
+        console.log(res,'<<<')
         dispatch({
             type: SEARCH_USERS,
             payload: res.data.items
@@ -64,6 +64,7 @@ const GithubState = props => {
             const res = await axios.get(
                 `https://api.github.com/users/${username}?client_id=${gitHubClientId}&client_secret=${gitHubClientSecret}`
             );
+            console.log(res,'+++')
             dispatch({
                 type: GET_USER,
                 payload: res.data

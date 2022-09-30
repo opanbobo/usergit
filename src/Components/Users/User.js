@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, Fragment } from 'react';
 import Spinner from '../Layouts/Spinner';
-import Repos from '../Repos/Repos';
+// import Repos from '../Repos/Repos';
 import { Link } from 'react-router-dom';
 import GithubContext from '../../context/github/GithubContext';
 
 const User = ({ match: { params } }) => {
-    const { user, getUser, loading, repos, getRepos } = useContext(GithubContext);
+    const { user, getUser, loading, getRepos } = useContext(GithubContext);
     useEffect(() => {
         getUser(params.login);
         getRepos(params.login);
@@ -22,7 +22,6 @@ const User = ({ match: { params } }) => {
         following,
         public_gists,
         public_repos,
-        hireable,
         blog,
         company } = user;
 
@@ -33,12 +32,7 @@ const User = ({ match: { params } }) => {
             <Link to='/' className='btn btn-light'>
                 Back to Search
         </Link>
-        Hireable:{' '}
-            {hireable ? (
-                <i className='fas fa-check text-success' />
-            ) : (
-                    <i className='fas fa-times-circle text-danger' />
-                )}
+        
             <div className='card grid-2'>
                 <div className='all-centre'>
                     <img
@@ -87,13 +81,13 @@ const User = ({ match: { params } }) => {
                     </ul>
                 </div>
             </div>
-            <div className='car text-centre my-3'>
+            <div className='car text-centre my-3 d-none'>
                 <div className='badge badge-primary'>Followers: {followers}</div>
                 <div className='badge badge-success'>Following: {following}</div>
                 <div className='badge badge-light'>Public repos: {public_repos}</div>
                 <div className='badge badge-dark'>Public gists: {public_gists}</div>
             </div>
-            <Repos repos={repos} loading={loading} />
+            
         </Fragment>
     )
 }

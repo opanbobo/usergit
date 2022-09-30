@@ -9,10 +9,10 @@ const Navbar = ({ title, icon }) => {
             <h1>
                 {title}
             </h1>
-            {/* <ul>
+            <ul>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/about'>About</Link></li>
-            </ul> */}
+            </ul>
         </nav>
     );
 }
